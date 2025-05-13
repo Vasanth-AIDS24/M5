@@ -9,9 +9,23 @@ Write a C program to convert a 23.65 into 25 using pointer
 4.	Print the modified value.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+int main() {
+    double num = 23.65;
+    double *ptr = &num;
+    
+    *ptr = 25.0;
+    
+    printf("Modified value: %.2f\n", num);
+    
+    return 0;
+}
+```
 ## OUTPUT:
- 	
+![image](https://github.com/user-attachments/assets/b028aadd-105b-4ab6-ab29-fb0649a0d094)
+
 
 
 
@@ -45,7 +59,28 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
-## OUTPUT:
+```
+#include <stdio.h>
+
+unsigned long long calculateProduct(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return n * calculateProduct(n - 1);
+}
+
+int main() {
+    int n = 12;
+    unsigned long long product = calculateProduct(n);
+    
+    printf("The product of the first %d natural numbers is: %llu\n", n, product);
+    
+    return 0;
+}
+```
+## OUTPUT
+![image](https://github.com/user-attachments/assets/abdb4593-4a28-4fa5-a6ae-d2eb3570ea4a)
+
          		
 ## RESULT:
 
@@ -68,10 +103,30 @@ Write C Program to find Sum of each row of a Matrix
 4.	Print the sum for each row.
 
 ## PROGRAM:
+```
+#include <stdio.h>
 
+unsigned long long calculateProduct(int n) {
+    if (n == 1) {
+        return 1;
+    }
+    return n * calculateProduct(n - 1);
+}
+
+int main() {
+    int n = 12;
+    unsigned long long product = calculateProduct(n);
+    
+    printf("The product of the first %d natural numbers is: %llu\n", n, product);
+    
+    return 0;
+}
+
+```
 
 
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/b1aed747-7704-4228-b09f-5f73b5afd0d5)
 
 
  
@@ -96,9 +151,41 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 5.	End the program.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+int main() {
+    int num_rows;
+
+    // Input the number of rows for the pyramid
+    printf("Enter the number of rows for the pyramid: ");
+    scanf("%d", &num_rows);
+
+    // Initialize variables
+    int i, j;
+    int midpoint = (2 * num_rows - 1) / 2; // Calculate the midpoint position
+
+    // Loop for each row of the pyramid
+    for (i = 1; i <= num_rows; i++) {
+        // Print spaces before stars
+        for (j = 1; j <= midpoint - (i - 1); j++) {
+            printf(" ");
+        }
+        // Print stars
+        for (j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+
+```
 
 
  ## OUTPUT
+![image](https://github.com/user-attachments/assets/035d3957-2b10-4bc4-b6db-d1c15641cce9)
 
  
 
@@ -132,8 +219,37 @@ Step 5: Loop from i = 0 to i < n:
 Step 6: End the program.
 
 ## PROGRAM
+```
+#include <stdio.h>
 
+int main() {
+    // Step 2: Declare variables
+    int i, n;
+    int arr[10];
+    int *parr = arr;  // Pointer initialization to point to array arr
+
+    // Step 3: Read the value of n (number of elements)
+    printf("Enter the number of elements (up to 10): ");
+    scanf("%d", &n);
+
+    // Step 4: Loop to read values and store them using pointer arithmetic
+    printf("Enter %d elements:\n", n);
+    for (i = 0; i < n; i++) {
+        printf("Element %d: ", i + 1);
+        scanf("%d", parr + i);  // Storing value using pointer arithmetic
+    }
+
+    // Step 5: Loop to print the elements using pointer dereferencing
+    printf("\nThe elements are:\n");
+    for (i = 0; i < n; i++) {
+        printf("Element %d: %d\n", i + 1, *(parr + i));  // Accessing value using pointer dereferencing
+    }
+
+    return 0;
+}
+```
 ## OUTPUT
+![image](https://github.com/user-attachments/assets/66ea3e3f-992e-4d0e-9016-91934e2083f9)
 
  
 
